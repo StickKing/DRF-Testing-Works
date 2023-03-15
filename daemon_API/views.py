@@ -9,6 +9,7 @@ from datetime import date
 from .swagger_schema import *
 import json
 
+
 #Представление API демона
 class DaemonView(RetrieveAPIView):
     authentication_classes = [JWTAuthentication]
