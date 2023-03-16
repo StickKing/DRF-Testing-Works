@@ -69,6 +69,9 @@ class ClientView(APIView):
             return Response({"Error": "Объект не найден"})
         #Удаляем фото клиента
         instance.client_photo.delete()
+        #Удаляем пользователя клиента
+        if instance.client_user:
+            instance.client_user.delete()
         #Удаляем самого клиента
         instance.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)

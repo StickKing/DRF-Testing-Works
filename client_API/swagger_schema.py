@@ -1,6 +1,9 @@
 from drf_yasg import openapi
 from rest_framework import status
 
+
+#Определяем схемы для swagger
+
 client_POST_request = openapi.Schema(
     type=openapi.TYPE_OBJECT,
     properties={
@@ -42,6 +45,9 @@ client_DELETE_request = openapi.Schema(
     required=['id']
 )
 
+#client_POST_params = openapi.Parameter('client_photo', in_=openapi.IN_QUERY, type=openapi.TYPE_FILE)
+#client_GET_params = openapi.Parameter('Authorization', in_=openapi.IN_QUERY, type=openapi.IN_HEADER)
+
 client_register_POST_request = openapi.Schema(
     type=openapi.TYPE_OBJECT,
     properties={
@@ -74,3 +80,4 @@ client_GET_responce = {
         read_only = ['pk']
     ),
 }
+

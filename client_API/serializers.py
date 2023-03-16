@@ -151,7 +151,7 @@ class ClientRegisterSerializer(ClientSerialize):
         new_password = validated_data.pop('password')
 
         #Создаём нового пользователя django
-        new_user = User.objects.create(username=new_username,
+        new_user = User.objects.create_user(username=new_username,
                                         password=new_password)
             
         #Проверяем существование группы clients или создаём её
